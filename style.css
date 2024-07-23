@@ -1,0 +1,148 @@
+@font-face {
+  font-family: 'FogtwoNo5';
+  src: url('FogtwoNo5.otf') format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.text-container {
+  position: absolute;
+  color: white;
+  text-align: left;
+  z-index: 2;
+}
+
+@media (min-width: 1025px) {
+  .text-container {
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: left;
+      margin-right: 45px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .text-container {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+}
+
+.text-container h1 {
+  font-family: 'FogtwoNo5', sans-serif;
+  font-size: 30px;
+  margin: 0;
+}
+
+.text-container h2 {
+  font-family: 'FogtwoNo5', sans-serif;
+  margin: 0 0 0 0 ;
+  font-size: 25px;
+}
+
+.text-container p {
+  font-family: 'Lato', sans-serif;
+  margin: 5px 0 0 0 ;
+  font-size: 1.2em;
+}
+
+.main-container {
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+@media (min-width: 1025px) {
+  .main-container {
+    display: flex;
+  }
+  .image-filler {
+    width: 65%;
+    background: url('FIGMA/Main Page Dekstop.png') no-repeat center center/cover;
+  }
+  .main-page {
+    width: 35%;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-page {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    justify-content: flex-start; /* Align sections to the top */
+    align-items: center;
+  }
+  .image-filler {
+    display: none;
+  }
+}
+
+.intro.desktop {
+  display: flex;
+  background: url('SCL_5963.JPG') no-repeat center center/cover;
+}
+
+.intro.mobile {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .intro.desktop {
+    display: none;
+  }
+  .intro.mobile {
+    display: flex;
+  }
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section img {
+  width: 100%;
+  height: auto;
+}
+
+.slide-up {
+  animation: slide-up 1s forwards;
+  -webkit-animation: slide-up 1s forwards;
+}
+
+@keyframes slide-up {
+  to {
+    transform: translateY(-100%);
+  }
+}

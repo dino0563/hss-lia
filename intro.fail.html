@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro Screen</title>
+    <style>
+        @font-face {
+            font-family: 'FogtwoNo5';
+            src: url('FogtwoNo5.otf') format('truetype');
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        .intro {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .text-container {
+            position: absolute;
+            color: white;
+            text-align: left;
+            z-index: 2;
+        }
+
+        @media (min-width: 1025px) {
+            .text-container {
+                right: 40px;
+                top: 50%;
+                transform: translateY(-50%);
+                text-align: left;
+                margin-right: 45px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .text-container {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .text-container h1 {
+            font-family: 'FogtwoNo5', sans-serif;
+            font-size: 30px;
+            margin: 0;
+        }
+
+        .text-container h2 {
+            font-family: 'FogtwoNo5', sans-serif;
+            margin: 0 0 0 0;
+            font-size: 25px;
+        }
+
+        .text-container p {
+            font-family: 'Lato', sans-serif;
+            margin: 5px 0 0 0;
+            font-size: 1.2em;
+        }
+
+        .main-container {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas: 
+                "photo flowers"
+                "text flowers";
+            gap: 10px;
+            position: relative;
+            max-width: 100%;
+            max-height: 100%;
+            overflow: hidden;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('IMAGE FILLER/BG.png') no-repeat center center/cover;
+            z-index: -1;
+        }
+
+        .photo {
+            grid-area: photo;
+            position: relative;
+            width: 100%;
+            height: auto;
+            margin: 10px; /* Adjust as needed for responsive spacing */
+        }
+
+        .photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 50%; /* Makes the image rounded */
+            margin: auto;
+        }
+
+        .flowers {
+            grid-area: flowers;
+            background: url('IMAGE FILLER/Bunga.png') no-repeat center center/contain;
+            width: 100%;
+            height: auto;
+        }
+
+        .text {
+            grid-area: text;
+            align-self: center;
+            justify-self: start;
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+
+        .text img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .fade-out {
+            animation: fade-out 1s forwards;
+        }
+
+        .slide-up {
+            animation: slide-up 1s forwards;
+        }
+
+        @keyframes fade-out {
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes slide-up {
+            to {
+                transform: translateY(-100%);
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .main-container {
+                display: flex;
+            }
+            .image-filler {
+                width: 65%;
+                background: url('FIGMA/Main Page Dekstop.png') no-repeat center center/cover;
+            }
+            .main-page {
+                width: 35%;
+                background-color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .main-page {
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .image-filler {
+                display: none;
+            }
+            .intro.mobile {
+                display: flex;
+            }
+        }
+
+        .intro.desktop {
+            display: flex;
+            background: url('SCL_5963.JPG') no-repeat center center/cover;
+        }
+
+        @media (max-width: 1024px) {
+            .intro.desktop {
+                display: none;
+            }
+            .container {
+                grid-template-areas:
+                    "flowers"
+                    "photo"
+                    "text";
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .flowers {
+                background-size: contain;
+            }
+
+            .photo {
+                margin: 5px; /* Adjust as needed for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="audio" autoplay hidden loop>
+        <source src="BGM.mp3" type="audio/mp3">
+    </audio>
+    <div class="intro desktop" id="intro-desktop" onclick="transitionDesktop()">
+        <div class="text-container">
+            <h1 style="font-size: 28px;">Birthday Dinner of</h1>
+            <h1 style="font-size: 42px;">CLARISSA ANGELIA</h1>
+            <p style="font-size: 25px;">25.08.2024</p>
+            <h2 id="guest-dear-desktop" style="font-size: 20px; margin-top: 20px;">Dear:</h2>
+            <h2 id="guest-name-desktop" style="font-size: 30px;"></h2>
+            <p id="valid-for-desktop" style="font-size: 20px;"></p>
+        </div>
+    </div>
+    <div class="intro mobile" id="intro-mobile" onclick="transitionMobile()">
+        <div class="text-container" id="text-container-mobile">
+            <h1 style="font-size: 20px; text-shadow: 1px 1px 2px #000;">Birthday Dinner of</h1>
+            <h1 style="font-size: 25px; text-shadow: 1px 1px 2px #000;">CLARISSA ANGELIA</h1>
+            <h2 id="guest-name-mobile" style="font-size: 18px; text-shadow: 1px 1px 2px #000;"></h2>
+            <p style="font-size: 15px; text-shadow: 1px 1px 2px #000;">25.08.2024</p>
+            <p id="valid-for-mobile" style="font-size: 12px; text-shadow: 1px 1px 2px #000;"></p>
+        </div>
+    </div>
+    <div class="main-container" id="main-container">
+        <div class="image-filler" id="image-filler"></div>
+        <div class="main-page" id="main-page">
+            <div class="image-section">
+                <img src="Section 1.jpg" alt="Image 1">
+            </div>
+            <div class="image-section">
+                <img src="Section 2.jpg" alt="Image 2">
+            </div>
+            <div class="image-section">
+                <img src="image3.jpg" alt="Image 3">
+            </div>
+            <div class="image-section">
+                <img src="image4.jpg" alt="Image 4">
+            </div>
+            <div class="image-section">
+                <img src="image5.jpg" alt="Image 5">
+            </div>
+        </div>
+    </div>
+    <script>
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        function setGuestName() {
+            const guestName = getQueryParameter('to');
+            if (guestName) {
+                document.getElementById('guest-name-desktop').innerText = guestName;
+                document.getElementById('guest-name-mobile').innerText = `Dear: ${guestName}`;
+                document.getElementById('valid-for-desktop').innerText = "Valid for 1 person";
+                document.getElementById('valid-for-mobile').innerText = "Valid for 1 person";
+            }
+        }
+
+        function transitionDesktop() {
+            const introDesktop = document.getElementById('intro-desktop');
+            const mainContainer = document.getElementById('main-container');
+            introDesktop.classList.add('slide-up');
+            setTimeout(() => {
+                introDesktop.style.display = 'none';
+                mainContainer.style.display = 'flex';
+            }, 1000);
+        }
+
+        function transitionMobile() {
+            const introMobile = document.getElementById('intro-mobile');
+            const mainContainer = document.getElementById('main-container');
+            introMobile.classList.add('slide-up');
+            setTimeout(() => {
+                introMobile.style.display = 'none';
+                mainContainer.style.display = 'flex';
+            }, 1000);
+        }
+
+        document.addEventListener('click', function() { document.getElementById('audio').play() }, { once: true });
+
+        window.onload = setGuestName;
+    </script>
+</body>
+</html>

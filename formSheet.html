@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <section class="hero is-primary is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">Data Entry Form</h1>
+        </div>
+      </div>
+    </section>
+    <form id="form" class="container m-4 pl-4" method="POST">
+      <div class="field">
+        <label class="label">Nama</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder="Your Nama"
+            name="Nama"
+          />
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Kehadiran</label>
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="Kehadiran" value="Iya" /> Iya
+          </label>
+          <label class="radio">
+            <input type="radio" name="Kehadiran" value="Tidak" /> Tidak
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label Grouped">Makanan</label>
+        <!-- <label for="menuSelection"><strong>Grouped</strong></label> -->
+    <select id="Makanan" name="Makanan">
+        <optgroup label="Western">
+            <option value="Home Style Burger’s and Pizza">Home Style Burger’s and Pizza</option>
+            <option value="Meet My Meat (Pizza)">Meet My Meat (Pizza)</option>
+            <option value="Cajun Chicken Alfredo">Cajun Chicken Alfredo</option>
+            <option value="Carbonara With Striploin Steak">Carbonara With Striploin Steak</option>
+            <option value="Smoked Beef Aglio">Smoked Beef Aglio</option>
+            <option value="Singapore Chilli Crab">Singapore Chilli Crab</option>
+            <option value="Aglio E Olio Salmon">Aglio E Olio Salmon</option>
+            <option value="Wagyu Bolognise Pasta">Wagyu Bolognise Pasta</option>
+            <option value="Sesame Caesar Salad with Poached Egg">Sesame Caesar Salad with Poached Egg</option>
+            <option value="Oura Cheese Burger">Oura Cheese Burger</option>
+            <option value="Chicken Katsu Burger">Chicken Katsu Burger</option>
+            <option value="Steak and Eggs">Steak and Eggs</option>
+            <option value="BBQ Steak Platter">BBQ Steak Platter</option>
+            <option value="Chicken Monterey Jack">Chicken Monterey Jack</option>
+            <option value="Chicken Parmagiana">Chicken Parmagiana</option>
+            <option value="Chicken Steak with BBQ and Saute Mushroom">Chicken Steak with BBQ and Saute Mushroom</option>
+            <option value="Chicken Cordon Blue with Creamy Mustard">Chicken Cordon Blue with Creamy Mustard</option>
+            <option value="Honey Garlic Chicken Steak">Honey Garlic Chicken Steak</option>
+            <option value="Teppan Teriyaki Rice">Teppan Teriyaki Rice</option>
+            <option value="Truffle Gyutandon">Truffle Gyutandon</option>
+            <option value="Japanese Salmon Fried Rice">Japanese Salmon Fried Rice</option>
+            <option value="Classic Fish and Chips">Classic Fish and Chips</option>
+        </optgroup>
+        <optgroup label="Nusantara">
+            <option value="Bebek Betutu">Bebek Betutu</option>
+            <option value="Nasi Goreng Rempah with Bone Marrow">Nasi Goreng Rempah with Bone Marrow</option>
+            <option value="Nasi Campur Madura">Nasi Campur Madura</option>
+            <option value="Mie Tek-Tek with Serundeng & Sambal Roa">Mie Tek-Tek with Serundeng & Sambal Roa</option>
+            <option value="Nasi Tjampoer Oura">Nasi Tjampoer Oura</option>
+            <option value="Salmon Teriyaki Sambal Matah">Salmon Teriyaki Sambal Matah</option>
+            <option value="Ayam Geprek Sambal Roa">Ayam Geprek Sambal Roa</option>
+            <option value="Saikoro Beef Tongseng">Saikoro Beef Tongseng</option>
+            <option value="Bebek Tiga Sambal">Bebek Tiga Sambal</option>
+            <option value="Nasi Bakar Timbel Ayam Parayangan">Nasi Bakar Timbel Ayam Parayangan</option>
+            <option value="Nasi Timbel Empal with Serundeng">Nasi Timbel Empal with Serundeng</option>
+            <option value="Sop Iga Sapi">Sop Iga Sapi</option>
+        </optgroup>
+    </select>
+      </div>
+      
+      <div class="field">
+        <label class="label Grouped">Makanan</label>
+        <!-- <label for="menuSelection"><strong>Grouped</strong></label> -->
+        <select id="Minuman" name="Minuman">
+          <optgroup label="Mocktails">
+              <option value="Yupi">Yupi (Raspberry, Mango, Vitamin C)</option>
+              <option value="Sugus">Sugus (Cotton Candy, Grenadine, Vitamin C, Soda)</option>
+              <option value="Pletok Spritz">Pletok Spritz (Indonesian Mix Spice, Herbs, Soda)</option>
+              <option value="Bubble Gum">Bubble Gum (Clarified Dragonfruit Bubble Gum, Osmanthus, Zero Proof Gin)</option>
+          </optgroup>
+          <optgroup label="Tea">
+              <option value="Iced Shaken Flavoured Tea">Iced Shaken Flavoured Tea (Lychee/Lemon/Peach)</option>
+              <option value="Black Tea">Black Tea</option>
+              <option value="Jasmine">Jasmine</option>
+              <option value="Chamomile">Chamomile</option>
+              <option value="Early Grey">Early Grey</option>
+              <option value="Butterfly Tea">Butterfly Tea</option>
+              <option value="English Breakfast">English Breakfast</option>
+          </optgroup>
+          <optgroup label="Juice">
+              <option value="Apple">Apple</option>
+              <option value="Melon">Melon</option>
+              <option value="Watermelon">Watermelon</option>
+              <option value="Orange Juice">Orange Juice</option>
+              <option value="Healthy Green">Healthy Green (PokCoy, Romaine, Pineapple, Apple)</option>
+              <option value="Hulk Green">Hulk Green (Lettuce, Pokcoy, Pineapple, Green Apple)</option>
+          </optgroup>
+          <optgroup label="Nusantara">
+              <option value="Es Campur">Es Campur (Watermelon, Melon, Jelly, Strawberry Syrup, Kolang Kaling)</option>
+          </optgroup>
+          <optgroup label="Soft Drink">
+              <option value="Coca Cola">Coca Cola</option>
+              <option value="Tonic Water">Tonic Water</option>
+              <option value="Fanta">Fanta</option>
+              <option value="Sprite">Sprite</option>
+          </optgroup>
+          <optgroup label="Mineral Water">
+              <option value="Cleo Still Water">Cleo Still Water</option>
+              <option value="Balian Still Water">Balian Still Water</option>
+              <option value="Balian Sparkling Water">Balian Sparkling Water</option>
+          </optgroup>
+          <optgroup label="Milk Bar">
+              <option value="Choco Banana">Choco Banana (Creamy, Dark Chocolate, Hint of Banana, Corn Flakes)</option>
+              <option value="Chocolate">Chocolate *no topping (Dark chocolate, Sweet and Milky)</option>
+              <option value="Ubee">Ubee (Creamy, Sweet Taro, Froot Loops)</option>
+              <option value="Matcha">Matcha *no toppings (Oura signature Matcha, Creamy and Milky)</option>
+          </optgroup>
+          <optgroup label="Coffee">
+              <option value="Espresso">Espresso</option>
+              <option value="Americano">Americano</option>
+              <option value="Long Black">Long Black</option>
+              <option value="Cappucino">Cappucino</option>
+              <option value="Latte">Latte</option>
+              <option value="Picollo">Picollo</option>
+              <option value="Babychino">Babychino</option>
+              <option value="Spanish Latte">Spanish Latte (Sweet Iced Coffee with hint of savory roasted nuts)</option>
+              <option value="Es Kopi Lokal">Es Kopi Lokal (Sweet Iced Coffee with local taste of sweetness)</option>
+              <option value="Irish Coffee Gula Aren">Irish Coffee Gula Aren (Gula Aren, Spice Liquid Distillate)</option>
+              <option value="Mocha">Mocha</option>
+              <option value="Affogato">Affogato (Espresso, Sweet Vanilla Ice Cream)</option>
+              <option value="O.J Coffee">O.J Coffee (Orange Juice Coffee)</option>
+              <option value="Einspanner">Einspanner (Sweet Iced Coffee with taste of malt, vanilla & cream)</option>
+              <option value="Baileeys">Baileeys (Coffee, Vanilla & Raisins Home Made Mokka Cream)</option>
+          </optgroup>
+          <optgroup label="Kombucha">
+              <option value="Port">Port (Kombucha, Blueberry, Grenadine, Bitter)</option>
+              <option value="Old Man’s Candy">Old Man’s Candy (Kombucha, Blue Butterfly Pea, Blue Curacao, Cotton Candy)</option>
+              <option value="White Noise">White Noise (Kombucha, Potato Milk, Vanilla, Butterscotch)</option>
+              <option value="Champagne">Champagne (Kombucha, Pineapple, Vanilla, Peach)</option>
+          </optgroup>
+      </select>
+      
+      <!-- <div id="hotColdSelection" style="display:none;">
+          <label for="hotCold"><strong>Select Temperature</strong></label>
+          <select id="hotCold" name="hotCold">
+              <option value="hot">Hot</option>
+              <option value="cold">Cold</option>
+          </select>
+      </div> -->
+      </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-primary" type="submit" id="submit-button">
+            Sign Up
+          </button>
+        </div>
+        <div class="control">
+          <button class="button is-danger">Cancel</button>
+        </div>
+      </div>
+    </form>
+    <div
+      id="message"
+      style="
+        display: none;
+        margin: 20px;
+        font-weight: bold;
+        color: green;
+        padding: 8px;
+        background-color: beige;
+        border-radius: 4px;
+        border-color: aquamarine;
+      "
+    ></div>
+
+    <script>
+      document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        document.getElementById("message").textContent = "Submitting..";
+        document.getElementById("message").style.display = "block";
+        document.getElementById("submit-button").disabled = true;
+
+        // Collect the form data
+        var formData = new FormData(this);
+        var keyValuePairs = [];
+        for (var pair of formData.entries()) {
+          keyValuePairs.push(pair[0] + "=" + pair[1]);
+        }
+
+        var formDataString = keyValuePairs.join("&");
+
+        // Send a POST request to your Google Apps Script
+        fetch(
+          "https://script.google.com/macros/s/AKfycbwI_auiwzzBvgodifjVjOm1BkrOeZgHgGUKkWpjrTtDGMNFaNC8F_ZL63v3ZpXbrtLo/exec",
+          {
+            redirect: "follow",
+            method: "POST",
+            body: formDataString,
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8",
+            },
+          }
+        )
+          .then(function (response) {
+            // Check if the request was successful
+            if (response) {
+              return response; // Assuming your script returns JSON response
+            } else {
+              throw new Error("Failed to submit the form.");
+            }
+          })
+          .then(function (data) {
+            // Display a success message
+            document.getElementById("message").textContent =
+              "Data submitted successfully!";
+            document.getElementById("message").style.display = "block";
+            document.getElementById("message").style.backgroundColor = "green";
+            document.getElementById("message").style.color = "beige";
+            document.getElementById("submit-button").disabled = false;
+            document.getElementById("form").reset();
+
+            setTimeout(function () {
+              document.getElementById("message").textContent = "";
+              document.getElementById("message").style.display = "none";
+            }, 2600);
+          })
+          .catch(function (error) {
+            // Handle errors, you can display an error message here
+            console.error(error);
+            document.getElementById("message").textContent =
+              "An error occurred while submitting the form.";
+            document.getElementById("message").style.display = "block";
+          });
+      });
+    </script>
+  </body>
+</html>
