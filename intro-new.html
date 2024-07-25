@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lia's Birthday Dinner</title>
+  <link rel="shortcut icon" href="images/ICON.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+  <button class="mute-button" id="mute-button">
+    <i class="bi bi-volume-up-fill"></i>
+  </button>
+  <audio id="audio" autoplay hidden loop>
+    <source src="BGM.mp3" type="audio/mp3" />
+  </audio>
+  <div class="intro desktop" id="intro-desktop" onclick="transitionDesktop()">
+    <div class="content">
+      <div class="image-container">
+        <img src="./images/SCL_5963.JPG" class="main-img" alt="Clarissa Angelia" />
+        <img src="./images/SCL_6143.jpg" class="mobile-img" alt="Clarissa Angelia" />
+        <img src="./images/Judul.png" class="judul" alt="Clarissa Angelia" />
+        <div class="text-box-container">
+          <img src="./images/Text Box.png" class="text-box" alt="Dear: Lia" />
+          <h2 id="guest-name-html" class="guest"></h2>
+        </div>
+      </div>
+      <img src="./images/Boneka.png" class="boneka" alt="Boneka" />
+    </div>
+  </div>
+
+  <!-- MAIN CONTAINER -->
+  <div class="main-container" id="main-container">
+<!-- IMAGE FILLER -->
+<div class="image-filler" id="image-filler">
+  <div class="content">
+    <div class="image-filler-container">
+      <img src="./images/SCL_5948.jpg" class="filler-img" alt="Clarissa Angelia" />
+      <img src="./images/Judul.png" class="filler-judul" alt="Clarissa Angelia" />
+    </div>
+  </div>
+</div>
+
+    <!-- MAIN PAGE -->
+    <!-- SECTION 1 -->
+    <div class="main-page" id="main-page">
+      <div class="position-relative">
+        <img src="./images/Section 1.jpg" alt="Cover Image 1" />
+        <div class="position-absolute inset-0">
+          <div class="animate__animated animate__fadeInDown">
+            <img class="flowers slide-in-blurred-top" src="./images/flower.png" alt="Flower" />
+          </div>
+          <div class="animate__animated animate__zoomIn"></div>
+          <img class="title" src="images/Judul.png" alt="Title" />
+        </div>
+      </div>
+
+      <!-- SECTION 2 -->
+      <div class="position-relative">
+        <img src="./images/Section 2.jpg" alt="Cover Image 2" />
+        <div class="position-absolute inset-0">
+          <div class="animate__animated animate__flipInX">
+            <img class="youreInvited" src="./images/Youre_Invited.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 3 -->
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

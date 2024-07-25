@@ -1,11 +1,24 @@
+/* 
+-- LIST OF CONTENT
+--------- 1. ROOT
+--------- 2. INTRO
+--------- 3. IMAGE FILLER
+--------- 4. CONTENT AREA
+--------- 5. COUNTDOWN
+--------- 6. FORMS
+--------- 7. SCROLL
+--------- 8. RESPONSIVE
+*/
 @font-face {
-  font-family: 'FogtwoNo5';
-  src: url('FogtwoNo5.otf') format('truetype');
+  font-family: "FogtwoNo5";
+  src: url("FogtwoNo5.otf") format("truetype");
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700&display=swap");
 
-body, html {
+/* ============ 1. ROOT ============= */
+body,
+html {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -24,68 +37,33 @@ body, html {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  z-index: 2; /* Ensure intro is on top */
 }
 
-.text-container {
-  position: absolute;
-  color: white;
-  text-align: left;
-  z-index: 2;
-}
-
-@media (min-width: 1025px) {
-  .text-container {
-      right: 40px;
-      top: 50%;
-      transform: translateY(-50%);
-      text-align: left;
-      margin-right: 45px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .text-container {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-  }
-}
-
-.text-container h1 {
-  font-family: 'FogtwoNo5', sans-serif;
-  font-size: 30px;
-  margin: 0;
-}
-
-.text-container h2 {
-  font-family: 'FogtwoNo5', sans-serif;
-  margin: 0 0 0 0 ;
-  font-size: 25px;
-}
-
-.text-container p {
-  font-family: 'Lato', sans-serif;
-  margin: 5px 0 0 0 ;
-  font-size: 1.2em;
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .main-container {
   display: none;
   width: 100%;
   height: 100%;
-  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+  position: relative;
+  z-index: 1; /* Ensure main container is below intro */
 }
 
 @media (min-width: 1025px) {
   .main-container {
     display: flex;
   }
-  .image-filler {
-    width: 65%;
-    background: url('FIGMA/Main Page Dekstop.png') no-repeat center center/cover;
-  }
+
   .main-page {
-    width: 35%;
+    width: 30%;
     background-color: white;
     flex-direction: column;
     justify-content: center;
@@ -93,7 +71,7 @@ body, html {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .main-page {
     width: 100%;
     height: auto;
@@ -101,34 +79,52 @@ body, html {
     justify-content: flex-start;
     align-items: center;
   }
+
   .image-filler {
     display: none;
   }
+
+  .intro.desktop {
+    display: none;
+  }
+
+  .intro.mobile {
+    display: flex;
+  }
+
+  .main-container {
+    display: block;
+  }
 }
+
+
 
 .intro.mobile {
   display: none;
 }
 
-@media (max-width: 1024px) {
-  .intro.desktop {
-    display: none;
-  }
-  .intro.mobile {
-    display: flex;
-  }
-}
-
 .section {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
-.section img {
+.position-relative img {
   width: 100%;
   height: auto;
+}
+
+.flowers {
+  display: flex;
+  position: absolute;
+  /* transform: translateY(-53%) translateX(117%); */
+  scale: 100%;
+  z-index: 2;
+}
+
+.flowers {
+  z-index: 4;
 }
 
 .slide-up {
@@ -144,8 +140,47 @@ body, html {
 
 .intro.desktop {
   display: flex;
-  background: url('./BG.png') no-repeat center center/cover;
+  background: url("./BG.png") no-repeat center center/cover;
 }
+
+.image-filler {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center;    /* Center the content vertically */
+  background: url("./BG.png") no-repeat center center/cover;
+  height: 100vh; /* Full viewport height */
+  position: absolute;
+  z-index: 2;
+}
+
+.image-filler-container {
+  position: absolute;
+  top: 8%;
+  left: 5%;
+  right: 5%;
+  bottom: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.filler-judul {
+  max-width: 100%; /* Ensure images are responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.filler-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5vh;
+  -webkit-border-radius: 5vh;
+  -moz-border-radius: 5vh;
+  -ms-border-radius: 5vh;
+  -o-border-radius: 5vh;
+}
+
 
 .content {
   position: relative;
@@ -184,7 +219,7 @@ body, html {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 55px;
+  border-radius: 5vh;
 }
 
 .judul {
@@ -214,21 +249,55 @@ body, html {
   z-index: 3;
 }
 
+/* .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+} */
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.guest {
+  position: absolute;
+  bottom: 17%;
+  right: 10.2%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: #ffffff;
+  text-shadow: 0 6px 4px #e2797d;
+  z-index: 4;
+  justify-content: center;
+  text-align: center;
+  font-size: 5vh;
+}
+
+.textbox-container {
+  position: relative;
+}
+
 @media (max-width: 1025px) {
   .judul {
-    max-width: 50%;
-    left: 1%;
+    width: 60%;
+    height: auto;
+    left: 0.2%;
   }
+
   .text-box {
-    bottom: 50px;
-    max-width: 40%;
+    bottom: 2%;
+    width: 60%;
     text-align: center;
     left: 50%;
     transform: translateX(-50%);
   }
+
   .boneka {
     display: none;
   }
+
   .image-container {
     position: absolute;
     top: 5%;
@@ -239,9 +308,11 @@ body, html {
     justify-content: center;
     align-items: center;
   }
+
   .main-img {
     display: none;
   }
+
   .mobile-img {
     display: block;
   }
@@ -252,4 +323,53 @@ body, html {
     width: calc(100% - 20px);
     height: calc(100% - 20px);
   }
+}
+
+
+
+.mute-button {
+  position: fixed;
+  top: 1vh;
+  right: 1vh;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  border-radius: 25%;
+  /* Changed border-radius to a percentage value */
+  padding: 1vh;
+  /* Reduced padding for smaller size */
+  width: 5vh;
+  /* Reduced width for smaller size */
+  height: 5vh;
+  /* Reduced height for smaller size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.mute-button i {
+  font-size: 2.5vh;
+  color: #4f4f4f;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 0.444vh;
+}
+
+::-webkit-scrollbar-track {
+  background: #b58d90;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fcd1d4;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f5bfc2;
 }
