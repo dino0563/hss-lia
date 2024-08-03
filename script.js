@@ -55,3 +55,4 @@ function transitionMobile() {
 document.addEventListener('click', function() { document.getElementById('audio').play() }, { once: true });
 
 window.onload = setGuestName;
+

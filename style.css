@@ -5,6 +5,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700&display=swap');
 
+/* General Styles */
 body, html {
   margin: 0;
   padding: 0;
@@ -16,6 +17,7 @@ body, html {
   align-items: center;
 }
 
+/* Intro Screen */
 .intro {
   position: fixed;
   width: 100%;
@@ -24,6 +26,7 @@ body, html {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  z-index: 10;
 }
 
 .text-container {
@@ -35,19 +38,19 @@ body, html {
 
 @media (min-width: 1025px) {
   .text-container {
-      right: 40px;
-      top: 50%;
-      transform: translateY(-50%);
-      text-align: left;
-      margin-right: 45px;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+    margin-right: 45px;
   }
 }
 
 @media (max-width: 1024px) {
   .text-container {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -59,92 +62,19 @@ body, html {
 
 .text-container h2 {
   font-family: 'FogtwoNo5', sans-serif;
-  margin: 0 0 0 0 ;
+  margin: 0 0 0 0;
   font-size: 25px;
 }
 
 .text-container p {
   font-family: 'Lato', sans-serif;
-  margin: 5px 0 0 0 ;
+  margin: 5px 0 0 0;
   font-size: 1.2em;
-}
-
-.main-container {
-  display: none;
-  width: 100%;
-  height: 100%;
-  overflow-y: auto; /* Enable vertical scrolling */
-}
-
-@media (min-width: 1025px) {
-  .main-container {
-    display: flex;
-  }
-  .image-filler {
-    width: 65%;
-    background: url('FIGMA/Main Page Dekstop.png') no-repeat center center/cover;
-  }
-  .main-page {
-    width: 35%;
-    background-color: white;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-@media (max-width: 1024px) {
-  .main-page {
-    width: 100%;
-    height: auto;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  .image-filler {
-    display: none;
-  }
-}
-
-.intro.mobile {
-  display: none;
-}
-
-@media (max-width: 1024px) {
-  .intro.desktop {
-    display: none;
-  }
-  .intro.mobile {
-    display: flex;
-  }
-}
-
-.section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.section img {
-  width: 100%;
-  height: auto;
-}
-
-.slide-up {
-  animation: slide-up 1s forwards;
-  -webkit-animation: slide-up 1s forwards;
-}
-
-@keyframes slide-up {
-  to {
-    transform: translateY(-100%);
-  }
 }
 
 .intro.desktop {
   display: flex;
-  background: url('./BG.png') no-repeat center center/cover;
+  background: url('./images/filler/BG.png') no-repeat center center/cover;
 }
 
 .content {
@@ -159,16 +89,28 @@ body, html {
 
 .image-container {
   position: absolute;
-  top: 8%;
-  left: 5%;
-  right: 5%;
-  bottom: 8%;
+  top: 6%;
+  left: 4%;
+  right: 4%;
+  bottom: 6%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4vh;
+  -webkit-border-radius: 4vh;
+  -moz-border-radius: 4vh;
+  -ms-border-radius: 4vh;
+  -o-border-radius: 4vh;
+}
+
+.mobile-img {
+  display: none;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -179,20 +121,12 @@ body, html {
   -o-border-radius: 5vh;
 }
 
-.mobile-img {
-  display: none;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 55px;
-}
-
 .judul {
   position: absolute;
   width: 27%;
   height: auto;
   top: 5px;
-  right: 40px;
+  right: 2%;
   z-index: 3;
 }
 
@@ -201,7 +135,7 @@ body, html {
   height: auto;
   position: absolute;
   bottom: 5%;
-  right: 5%;
+  right: 4%;
   z-index: 3;
 }
 
@@ -209,23 +143,29 @@ body, html {
   position: absolute;
   width: 25%;
   height: auto;
-  left: -10px;
-  bottom: 20px;
+  left: -1vh;
+  bottom: 1vh;
   z-index: 3;
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1024px) {
   .judul {
-    max-width: 50%;
-    left: 1%;
+    width: 70%;
+    text-align: center;
+    right: -4vh;
+    top: -5vh;
   }
   .text-box {
-    bottom: 50px;
-    max-width: 40%;
+    bottom: 5vh;
+    width: 55%;
     text-align: center;
     left: 50%;
     transform: translateX(-50%);
-  }
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
   .boneka {
     display: none;
   }
@@ -251,5 +191,134 @@ body, html {
   .content {
     width: calc(100% - 20px);
     height: calc(100% - 20px);
+  }
+}
+
+/* Main Page and Filler */
+.main-container {
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; /* vertical scrolling */
+}
+
+@media (min-width: 1025px) {
+  .main-container {
+    display: flex;
+  }
+#image-filler .judul-filler {
+    position: absolute;
+    width: 35%;
+    height: auto;
+    bottom: 3vh;
+    right: 1vh;
+    z-index: 6;
+}
+  #image-filler .bunga {
+    position: absolute;
+    width: 37%;
+    height: auto;
+    top: 1vh;
+    left: 1vh;
+    z-index: 6;
+  }
+  #image-filler .image {
+    position: fixed;
+    top: 6.1%;
+    left: 2.8%;
+    width: 59%;
+    height: 87.7%;
+    border-radius: 5vh;
+    z-index: 5;
+    -webkit-border-radius: 5vh;
+    -moz-border-radius: 5vh;
+    -ms-border-radius: 5vh;
+    -o-border-radius: 5vh;
+}
+  .image-filler {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 65%;
+    height: 100vh;
+    background: url('FIGMA/Main Page Dekstop.png') no-repeat center center/cover;
+    overflow: hidden;
+  }
+  .image-filler img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .main-page {
+    margin-left: 65%;
+    width: 35%;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+  .section {
+    position: relative;
+  }
+  .judul-s1 {
+    max-width: 80%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    margin-top: 7vh;
+    right: 8%;
+    z-index: 7;
+  }
+  
+}
+
+@media (max-width: 1024px) {
+  .main-page {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .image-filler {
+    display: none;
+  }
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section img {
+  width: 100%;
+  height: auto;
+}
+
+.section {
+  position: relative;
+}
+.judul-s1 {
+  max-width: 84%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  margin-top: 7vh;
+  right: 7%;
+  z-index: 7;
+}
+
+.slide-up {
+  animation: slide-up 1s forwards;
+  -webkit-animation: slide-up 1s forwards;
+}
+
+@keyframes slide-up {
+  to {
+    transform: translateY(-100%);
   }
 }

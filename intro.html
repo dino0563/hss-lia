@@ -7,48 +7,51 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Audio -->
     <audio id="audio" autoplay hidden loop>
         <source src="BGM.mp3" type="audio/mp3">
     </audio>
+
+    <!-- Intro Screen -->
     <div class="intro desktop" id="intro-desktop" onclick="transitionDesktop()">
         <div class="content">
             <div class="image-container">
-                <img src="./images/SCL_5963.JPG" class="main-img" alt="Clarissa Angelia">
-                <img src="./images/SCL_6143.jpg" class="mobile-img" alt="Clarissa Angelia">
-                <img src="./images/Judul.png" class="judul" alt="Clarissa Angelia">
-                <img src="./images/Text Box.png" class="text-box" alt="Dear: Lia">
+                <img src="./images/intro/SCL_5963.JPG" class="main-img" alt="Clarissa Angelia" draggable="false">
+                <img src="./images/intro/SCL_6143.jpg" class="mobile-img" alt="Clarissa Angelia" draggable="false">
+                <img src="./images/intro/Judul.png" class="judul" alt="Clarissa Angelia" draggable="false">
+                <img src="./images/intro/Text Box.png" class="text-box" alt="Dear: Lia" draggable="false">
             </div>
-            <img src="./images/Boneka.png" class="boneka" alt="Boneka">
+            <img src="./images/intro/Boneka.png" class="boneka" alt="Boneka" draggable="false">
         </div>
-        <!-- <div class="text-container">
-            <h1 style="font-size: 28px;">Birthday Dinner of</h1>
-            <h1 style="font-size: 42px;">CLARISSA ANGELIA</h1>
-            <p style="font-size: 25px;">25.08.2024</p>
-            <h2 id="guest-dear-desktop" style="font-size: 20px; margin-top: 20px;">Dear:</h2>
-            <h2 id="guest-name-desktop" style="font-size: 30px;"></h2>
-            <p id="valid-for-desktop" style="font-size: 20px;"></p>
-        </div> -->
     </div>
-    <!-- <div class="intro mobile" id="intro-mobile" onclick="transitionMobile()" ontouchstart="startSwipe(event)" ontouchmove="moveSwipe(event)" ontouchend="endSwipe()">
-        <div class="text-container" id="text-container-mobile">
-            <h1 style="font-size: 20px; text-shadow: 1px 1px 2px #000;">Birthday Dinner of</h1>
-            <h1 style="font-size: 25px; text-shadow: 1px 1px 2px #000;">CLARISSA ANGELIA</h1>
-            <h2 id="guest-name-mobile" style="font-size: 18px; text-shadow: 1px 1px 2px #000;"></h2>
-            <p style="font-size: 15px; text-shadow: 1px 1px 2px #000;">25.08.2024</p>
-            <p id="valid-for-mobile" style="font-size: 12px; text-shadow: 1px 1px 2px #000;"></p>
-        </div>
-    </div> -->
+
+    <!-- Main Page -->
     <div class="main-container" id="main-container">
-        <div class="image-filler" id="image-filler"></div>
+        <!-- Additional Image -->
+
+        <!-- Fixed Image Filler -->
+        <div class="image-filler" id="image-filler">
+            <img src="./images/filler/Judul.png" class="judul-filler" alt="judul" draggable="false">
+            <img src="./images/filler/Bunga.svg" class="bunga" alt="bunga" draggable="false">
+            <img src="./images/filler/SCL_5948.jpg" class="image" alt="image" draggable="false">
+            <img src="./images/filler/BG.png" alt="">
+        </div>  
+
+        <!-- Scrollable Content -->
         <div class="main-page" id="main-page">
             <div class="section">
-                <img src="./images/Section 1.jpg" alt="Cover Image 1">
+                <img src="./images/section 1/bg section 1.svg" alt="Cover Image 1" draggable="false">
+                <div class="asset-s1">
+                    <!-- <img src="./images/section 1/bunga.svg" class="bunga-s1" alt="bunga-s1" draggable="false"> -->
+                    <img src="./images/section 1/Judul.png" class="judul-s1" alt="judul-s1" draggable="false">
+                </div>
             </div>
             <div class="section">
-                <img src="./images/Section 2.jpg" alt="Cover Image 2">
+                <img src="./images/Section 2.svg" alt="Cover Image 2" draggable="false">
             </div>
         </div>
     </div>
+
     <script src="./script.js"></script>
 </body>
 </html>
