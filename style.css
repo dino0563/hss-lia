@@ -1,12 +1,13 @@
 @font-face {
-  font-family: 'FogtwoNo5';
-  src: url('FogtwoNo5.otf') format('truetype');
+  font-family: "FogtwoNo5";
+  src: url("FogtwoNo5.otf") format("truetype");
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700&display=swap");
 
 /* General Styles */
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -55,26 +56,26 @@ body, html {
 }
 
 .text-container h1 {
-  font-family: 'FogtwoNo5', sans-serif;
+  font-family: "FogtwoNo5", sans-serif;
   font-size: 30px;
   margin: 0;
 }
 
 .text-container h2 {
-  font-family: 'FogtwoNo5', sans-serif;
+  font-family: "FogtwoNo5", sans-serif;
   margin: 0 0 0 0;
   font-size: 25px;
 }
 
 .text-container p {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   margin: 5px 0 0 0;
   font-size: 1.2em;
 }
 
 .intro.desktop {
   display: flex;
-  background: url('./images/filler/BG.png') no-repeat center center/cover;
+  background: url("./images/filler/BG.png") no-repeat center center/cover;
 }
 
 .content {
@@ -123,7 +124,7 @@ body, html {
 
 .judul {
   position: absolute;
-  width: 27%;
+  width: 25%;
   height: auto;
   top: 5px;
   right: 2%;
@@ -148,16 +149,77 @@ body, html {
   z-index: 3;
 }
 
+/* MUTE BUTTON */
+.mute-button {
+  position: fixed;
+  top: 1vh;
+  right: 1vh;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  border-radius: 25%;
+  /* Changed border-radius to a percentage value */
+  padding: 1vh;
+  /* Reduced padding for smaller size */
+  width: 5vh;
+  /* Reduced width for smaller size */
+  height: 5vh;
+  /* Reduced height for smaller size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.mute-button i {
+  font-size: 2.5vh;
+  color: #4f4f4f;
+}
+
+/* SECTION 1 */
+
+/* SECTION 2 */
+
+/* SECTION 3 */
+.saveTheDate {
+  max-width: 80%;
+  height: auto;
+  /* margin-bottom: 20px; */
+}
+
+.date {
+  max-width: 65%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.addReminder {
+  width: 50%;
+  height: auto;
+}
+
+/* SECTION 4 */
+
+/* SECTION 5 */
+
+/* SECTION 6 */
+
+/* SECTION 7 */
+
+/* SECTION 8 */
+
 @media (max-width: 1024px) {
   .judul {
-    width: 70%;
+    width: 50%;
     text-align: center;
     right: -4vh;
     top: -5vh;
   }
   .text-box {
     bottom: 5vh;
-    width: 55%;
+    width: 40%;
     text-align: center;
     left: 50%;
     transform: translateX(-50%);
@@ -165,7 +227,7 @@ body, html {
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
-}
+  }
   .boneka {
     display: none;
   }
@@ -206,14 +268,14 @@ body, html {
   .main-container {
     display: flex;
   }
-#image-filler .judul-filler {
+  #image-filler .judul-filler {
     position: absolute;
     width: 35%;
     height: auto;
     bottom: 3vh;
     right: 1vh;
     z-index: 6;
-}
+  }
   #image-filler .bunga {
     position: absolute;
     width: 37%;
@@ -234,14 +296,14 @@ body, html {
     -moz-border-radius: 5vh;
     -ms-border-radius: 5vh;
     -o-border-radius: 5vh;
-}
+  }
   .image-filler {
     position: fixed;
     top: 0;
     left: 0;
     width: 65%;
     height: 100vh;
-    background: url('FIGMA/Main Page Dekstop.png') no-repeat center center/cover;
+    background: url("FIGMA/Main Page Dekstop.png") no-repeat center center/cover;
     overflow: hidden;
   }
   .image-filler img {
@@ -271,7 +333,6 @@ body, html {
     right: 8%;
     z-index: 7;
   }
-  
 }
 
 @media (max-width: 1024px) {
@@ -294,7 +355,7 @@ body, html {
   align-items: center;
 }
 
-.section img {
+.section .background {
   width: 100%;
   height: auto;
 }
@@ -302,6 +363,7 @@ body, html {
 .section {
   position: relative;
 }
+
 .judul-s1 {
   max-width: 84%;
   height: auto;
@@ -321,4 +383,23 @@ body, html {
   to {
     transform: translateY(-100%);
   }
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 0.444vh;
+}
+
+::-webkit-scrollbar-track {
+  background: #b58d90;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fcd1d4;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f5bfc2;
 }

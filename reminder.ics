@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Your Organization//NONSGML v1.0//EN
+BEGIN:VEVENT
+UID:uid1@example.com
+DTSTAMP:20240805T093000Z
+ORGANIZER;CN=Organizer Name:MAILTO:organizer@example.com
+DTSTART:20240805T093000Z
+DTEND:20240805T110000Z
+SUMMARY:Lia's Birthday Dinner
+DESCRIPTION:Birthday Dinner at OURA - Cafe & Restaurant
+LOCATION:Jl. Pahlawan Trip No.A11, Oro-oro Dowo, Kec. Klojen, Kota Malang, Jawa Timur 65112
+END:VEVENT
+END:VCALENDAR
