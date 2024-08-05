@@ -333,6 +333,12 @@ html {
     right: 8%;
     z-index: 7;
   }
+  .saveTheDate {
+    position: absolute;
+    top: -20%;
+    left: 13vh;
+    width: 70%;
+ }
 }
 
 @media (max-width: 1024px) {
@@ -346,6 +352,7 @@ html {
   .image-filler {
     display: none;
   }
+
 }
 
 .section {
