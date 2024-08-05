@@ -102,3 +102,25 @@ document.getElementById("mute-button").addEventListener("click", function () {
 
 const interval = setInterval(countdown, 60000); // Perbarui setiap menit
 countdown();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const elements = document.querySelectorAll('.animate__animated');
+
+  const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              const animationClass = entry.target.dataset.animation;
+              entry.target.classList.add(animationClass);
+              // Optionally, unobserve the element after it has animated in
+              observer.unobserve(entry.target);
+          }
+      });
+  }, {
+      threshold: 0.1 // You can adjust this threshold value to trigger the animation sooner or later
+  });
+
+  elements.forEach(element => {
+      observer.observe(element);
+  });
+});
