@@ -170,7 +170,18 @@ section .background {
 }
 
 /* MEDIA MOBILE */
+/* Ensure main-container is displayed properly on mobile */
 @media (max-width: 1024px) {
+  .main-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+  }
+
   .main-page {
     width: 100%;
     height: auto;
@@ -244,8 +255,6 @@ section .background {
     height: auto;
     margin-bottom: 3rem;
   }
-
-
 }
 
 @media (max-width: 991px) {
